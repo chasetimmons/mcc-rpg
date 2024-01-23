@@ -1,0 +1,38 @@
+     A* EXTERNAL PRINTER FILE DEFINITION FOR PROFIT REPORT
+     A          R HEADING                   SKIPB(1)
+     A                                     1DATE(*JOB *YY)
+     A                                      EDTCDE(Y)
+     A                                    23'COMPUSELL PROFITS'
+     A                                    52'PAGE '
+     A                                    57PAGNBR
+     A                                      EDTCDE(Z)
+     A                                      SPACEA(2)
+     A                                     1'PRODUCT'
+     A                                    36'SELLING'
+     A                                    46'CURRENT'
+     A                                    58'NET'
+     A                                      SPACEA(1)
+     A                                     1'NUMBER'
+     A                                     9'DESCRIPTION'
+     A                                    37'PRICE'
+     A                                    47'COST'
+     A                                    57'PROFIT'
+     A                                      SPACEA(1)
+     A          R DETAIL                    SPACEA(1)
+     A            PRODNO    R              1REFFLD(INVREC/PRODNO RPGIV_5THS/CSI-
+     A                                      NVP)
+     A            DESCRP    R              9REFFLD(INVREC/DESCRP RPGIV_5THS/CSI-
+     A                                      NVP)
+     A            SELLPR    R             51REFFLD(INVREC/SELLPR RPGIV_5THS/CSI-
+     A                                      NVP)
+     A            CURCST    R             59REFFLD(INVREC/CURCST RPGIV_5THS/CSI-
+     A                                      NVP)
+     A            PROFIT         6  2     68EDTCDE(1 $)
+     A          R TOTAL                     SPACEB(1)
+     A                                    46'TOTAL'
+     A            TOTALPROF      6  2     54EDTCDE(1 $)
+     A*%%RS+<record-sequences>
+     A*%%RS+ <sequence name="Untitled">
+     A*%%RS+  <device type="printer" width="132" height="66" />
+     A*%%RS+ </sequence>
+     A*%%RS </record-sequences> 

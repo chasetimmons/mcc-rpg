@@ -1,0 +1,60 @@
+     A                                      INDARA
+     A                                      PRINT
+     A                                      CA03(03 'F3=Exit')
+     A          R SCRN1
+     A                                  1 28'CloudServices24x7, Inc.'
+     A                                 13 18'Type value, then Press Enter.'
+     A                                 10 18'Product number  . . . .'
+     A            PRODIN         6Y 0B 10 44EDTCDE(Z)
+     A  90
+     AO 95                                  DSPATR(PC)
+     A  90                                  ERRMSG('Invalid product number' 90)
+     A  95                                  ERRMSG('Product number valid, but -
+     A                                      supplier code not found' 95)
+     A                                 20  3'F3=Exit'
+     A                                  1  2'User ID:'
+     A                                  1 11USER
+     A                                  1 69DATE(*JOB)
+     A                                      EDTWRD('  /  /  ')
+     A                                  2 26'Product Supplier Inquiry'
+     A          R SCRN2
+     A                                  1 30'CloudServices24x7, Inc.'
+     A                                  1 11USER
+     A                                  1  2'User ID:'
+     A                                  1 72DATE(*JOB)
+     A                                      EDTWRD('  /  /  ')
+     A                                  6 17'Supplier Code . . . . .'
+     A                                  7 17'Name. . . . . . . . . .'
+     A                                  8 17'Contact Person  . . . .'
+     A                                  9 17'Street  . . . . . . . .'
+     A                                 10 17'City  . . . . . . . . .'
+     A                                 11 17'State . . . . . . . . .'
+     A                                 12 17'Zip . . . . . . . . . .'
+     A                                 13 17'Phone . . . . . . . . .'
+     A                                 17  4'Press Enter to continue...'
+     A                                 20  2'F3=Exit'
+     A            SUPCOD    R        O  6 41REFFLD(SUPREC/SUPCOD RPGIV_5THS/CSS-
+     A                                      UPP)
+     A            SNAME     R        O  7 41REFFLD(SUPREC/SNAME RPGIV_5THS/CSSU-
+     A                                      PP)
+     A            CONTAC    R        O  8 41REFFLD(SUPREC/CONTAC RPGIV_5THS/CSS-
+     A                                      UPP)
+     A            SSTRET    R        O  9 41REFFLD(SUPREC/SSTRET RPGIV_5THS/CSS-
+     A                                      UPP)
+     A            SCITY     R        O 10 41REFFLD(SUPREC/SCITY RPGIV_5THS/CSSU-
+     A                                      PP)
+     A            SSTAT     R        O 11 41REFFLD(SUPREC/SSTAT RPGIV_5THS/CSSU-
+     A                                      PP)
+     A            SZIP      R        O 12 41REFFLD(SUPREC/SZIP RPGIV_5THS/CSSUP-
+     A                                      P)
+     A                                      EDTWRD('     -    ')
+     A            SPHONE    R        O 13 41REFFLD(SUPREC/SPHONE RPGIV_5THS/CSS-
+     A                                      UPP)
+     A                                      EDTWRD('   &   -    ')
+     A*%%RS+<record-sequences>
+     A*%%RS+ <sequence name="Untitled">
+     A*%%RS+  <device type="display" width="80" height="24" />
+     A*%%RS+  <record-write record-format="SCRN1" />
+     A*%%RS+  <record-write record-format="SCRN2" />
+     A*%%RS+ </sequence>
+     A*%%RS </record-sequences> 

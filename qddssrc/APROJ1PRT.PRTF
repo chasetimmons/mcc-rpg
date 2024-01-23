@@ -1,0 +1,17 @@
+     A                                      REF(POINTSFILE)
+     A          R HEADING
+     A                                     3DATE(*JOB) EDTCDE(Y)
+     A                                    20'STUDENT GRADE REPORT'
+                                            SPACEA(1)
+                                           1'STUDENT NAME'
+                                          20'RECEIVED'
+                                          30'POSSIBLE'
+                                          40'PERCENTAGE'
+                                          55'LETTER GRADE'
+                                            SPACEA(1)
+     A          R DETAIL                    SPACEA(1)
+     A            STUNAME   R              1
+     A            PTSRECEIVER             25EDTCDE(Z)
+     A            PTSPOSSIBLR             35EDTCDE(Z)
+     A            PERCENTAGE     3S 0     45EDTCDE(Z)
+     A            GRADE          1        60 

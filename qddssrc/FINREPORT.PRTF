@@ -1,0 +1,60 @@
+     A*%%TS  DD  20070830  084412  anders_c    REL-V5.0.1  WDSc
+     A*%%PR 1066132I
+     A*%%EC
+     A
+     A          R HEADING
+     A*%%TS  DD  20070722  141614  Loki        REL-V5.0.1  WDSc
+     A*%%RI 00000
+     A                                     5DATE(*SYS)
+     A                                      EDTCDE(Y)
+     A                                    53'CloudServices24x7, Inc. '
+     A                                   118'Page'
+     A                                   125PAGNBR
+     A                                      SPACEA(1)
+     A                                    48'Customer Balance and Payment Repor-
+     A                                      t'
+     A                                      SPACEA(1)
+     A                                     5'Cust.'
+     A                                    17'Purchase'
+     A                                    30'Purchase'
+     A                                    44'Down'
+     A                                    57'Balance'
+     A                                    73'Monthly'
+     A                                     5'Num.'
+     A                                      SPACEB(1)
+     A                                    18'Amount'
+     A                                    32'Date'
+     A                                    43'Payment'
+     A                                    59'Owed'
+     A                                    73'Payment'
+     A                                      SPACEA(1)
+     A          R DETAIL
+     A*%%TS  DD  20070830  084412  anders_c    REL-V5.0.1  WDSc
+     A*%%RI 00001
+     A                                      SPACEB(1)
+     A                                    34'-'
+     A            PURMON         2  0O    35EDTCDE(3)
+     A            CUSTNO         6S 0O     5
+     A            FINAMT         7S 2O    +6EDTWRD('    0.  ')
+     A            PURDAY         2  0O    32EDTCDE(3)
+     A            DWNPAY         7S 2O    42EDTWRD('  ,  0.  ')
+     A            BALDUE         7S 2O    +6EDTWRD('  ,  0.  ')
+     A            MONTHPAY       6  2O    +6EDTWRD(' ,  0.  ')
+     A          R TOTAL
+     A*%%TS  DD  20070830  084412  anders_c    REL-V5.0.1  WDSc
+     A*%%RI 00000
+     A                                  7 26'Totals'
+     A                                  9  1'Number of customers processed'
+     A            TOTALDOWN      8  2O  7 40EDTWRD('   ,  $0.  ')
+     A            TOTALOWED      8  2O  7 55EDTWRD('   ,  $0.  ')
+     A            TOTALPAY       8  2O  7 69EDTWRD('   ,  $0.  ')
+     A            CUSTCOUNT      3  0O  9 31EDTWRD('  0')
+
+     A*%%RS+<record-sequences>
+     A*%%RS+ <sequence name="Untitled">
+     A*%%RS+  <device type="printer" width="132" height="66" />
+     A*%%RS+  <record-write record-format="HEADING" />
+     A*%%RS+  <record-write record-format="DETAIL" />
+     A*%%RS+  <record-write record-format="TOTAL" />
+     A*%%RS+ </sequence>
+     A*%%RS </record-sequences> 

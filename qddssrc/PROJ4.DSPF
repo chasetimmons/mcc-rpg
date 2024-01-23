@@ -1,0 +1,87 @@
+     A* CIS270 Project 4 - Student score entry
+     A* 02/02/22 Chase Timmons
+     A                                      INDARA
+     A                                      PRINT
+     A                                      CA03(03 'F3=Exit')
+     A                                      CA12(12 'F12=Cancel')
+     A          R INQUIRY
+     A                                  1  2USER
+     A                                      COLOR(BLU)
+     A                                  1 72DATE
+     A                                      EDTCDE(Y)
+     A                                      COLOR(BLU)
+     A                                 20  5'F3=Exit'
+     A                                 10 25'Type value, then press enter'
+     A                                  8 23'Student Number. . . . :'
+     A                                      COLOR(WHT)
+     A            STUNO          9N 0B  8 47
+     A  90                                  ERRMSG('Invalid student number' 90)
+     A  90                                  DSPATR(PC)
+     A                                  6 18'S T U D E N T  H O M E W O R K  S -
+     A                                      Y S T E M'
+     A                                      DSPATR(RI)
+     A          R ENTRY
+     A                                  1  2USER
+     A                                      COLOR(BLU)
+     A                                  1 72DATE
+     A                                      EDTCDE(Y)
+     A                                      COLOR(BLU)
+     A                                  6 18'S T U D E N T  H O M E W O R K  S -
+     A                                      Y S T E M '
+     A                                      DSPATR(RI)
+     A                                  8 18'Name :'
+     A                                      COLOR(WHT)
+     A                                 10 18'Assignment Description:'
+     A                                      COLOR(WHT)
+     A                                 12 18'Points Received . . . :'
+     A                                      COLOR(WHT)
+     A                                 13 18'Points Possible . . . :'
+     A                                      COLOR(WHT)
+     A                                  9 18'==================================-
+     A                                      =========='
+     A                                 14 18'==================================-
+     A                                      =========='
+     A            STUNAME       40   O  8 25
+     A                                 15 27'Press enter to continue...'
+     A            DESC          20   B 10 42
+     A            PTSRCV         3N 0B 12 42
+     A  91                                  ERRMSG('Invalid points received' 91)
+     A  91                                  DSPATR(PC)
+     A            PTSPOS         3N 0B 13 42
+     A  92                                  ERRMSG('Invalid points possible' 92)
+     A  92                                  DSPATR(PC)
+     A                                 20  5'F3=Exit'
+     A          R RESULTS
+     A                                  1  2USER
+     A                                      COLOR(BLU)
+     A                                  1 72DATE
+     A                                      EDTCDE(Y)
+     A                                      COLOR(BLU)
+     A                                  6 18'S T U D E N T  H O M E W O R K  S -
+     A                                      Y S T E M '
+     A                                      DSPATR(RI)
+     A                                  8 18'Name :'
+     A                                      COLOR(WHT)
+     A            STUNAME       40      8 25
+     A                                  9 18'==================================-
+     A                                      =========='
+     A                                 14 18'==================================-
+     A                                      =========='
+     A                                 15 27'Press enter to continue...'
+     A                                 10 18'Assignment Description:'
+     A                                      COLOR(WHT)
+     A            DESC          20   O 10 42
+     A                                 12 18'Percentage :'
+     A                                      COLOR(WHT)
+     A            PASSFAIL      14   O 12 44
+     A            PERCENT        5Y 2O 12 31EDTCDE(J)
+     A                                 20  5'F3=Exit'
+
+     A*%%RS+<record-sequences>
+     A*%%RS+ <sequence name="SCORESS">
+     A*%%RS+  <device type="display" width="80" height="24" />
+     A*%%RS+  <record-write record-format="INQUIRY" />
+     A*%%RS+  <record-write record-format="ENTRY" />
+     A*%%RS+  <record-write record-format="RESULTS" />
+     A*%%RS+ </sequence>
+     A*%%RS </record-sequences> 

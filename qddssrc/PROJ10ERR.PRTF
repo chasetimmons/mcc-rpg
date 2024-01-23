@@ -1,0 +1,19 @@
+     A          R HEADING
+     A                                    55'Playing with Montior'
+     A          R ERROR1                    SPACEB(1)
+     A                                     5'Divide by Zero Not Allowed'
+     A                                      SPACEB(1)
+     A          R ERROR2                    SPACEB(1)
+     A                                     5'Array Index is Out of Bounds'
+     A          R ERROR3                    SPACEB(1)
+     A                                     5'Variable is too small'
+
+     A*%%RS+<record-sequences>
+     A*%%RS+ <sequence name="PROJ10R">
+     A*%%RS+  <device type="printer" width="132" height="66" />
+     A*%%RS+  <record-write record-format="HEADING" />
+     A*%%RS+  <record-write record-format="ERROR1" />
+     A*%%RS+  <record-write record-format="ERROR2" />
+     A*%%RS+  <record-write record-format="ERROR3" />
+     A*%%RS+ </sequence>
+     A*%%RS </record-sequences> 

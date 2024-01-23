@@ -1,0 +1,43 @@
+     A* CIS270 - Chase Timmons   1/10/2022
+     A* Audit report for GTC Telephone Company payments
+     A          R HEADING                   SKIPB(1)
+     A                                     2DATE
+     A                                      EDTCDE(Y)
+     A                                    52'GTC Telephone Company'
+     A                                   123'Page'
+     A                                   128PAGNBR
+     A                                      EDTCDE(Z)
+     A                                    41'Payment Processing Transaction Aud-
+     A                                      it Report'
+     A                                      SPACEB(1)
+     A                                   119'Chase Timmons'
+     A                                    21'Customer'
+     A                                      SPACEB(2)
+     A                                    39'Date Received'
+     A                                    63'Amount'
+     A          R DETAIL                    SPACEB(1)
+     A            CPHONE    R             21
+     A                                      REFFLD(PAYREC/CPHONE RPGIV_5THS/GTC-
+     A                                      PAYP)
+     A            PAYDATL   R             40REFFLD(PAYREC/DATRCVL RPGIV_5THS/GT-
+     A                                      CPAYP)
+     A            AMTOWE    R             61REFFLD(PAYREC/AMTPD RPGIV_5THS/GTC-
+     A                                      PAYP)
+     A                                      EDTCDE(1)
+     A          R ERROR
+     A                                    81'*** Customer Record Not Found ***'
+     A          R TOTAL                     SPACEB(2)
+     A            TOTERR         3  0     76EDTCDE(Z)
+     A                                    81'*** Customers not found in Master -
+     A                                      file ***'
+     A                                      SPACEA(5)
+
+     A*%%RS+<record-sequences>
+     A*%%RS+ <sequence name="PROJ2R">
+     A*%%RS+  <device type="printer" width="132" height="66" />
+     A*%%RS+  <record-write record-format="HEADING" />
+     A*%%RS+  <record-write record-format="DETAIL" />
+     A*%%RS+  <record-write record-format="ERROR" />
+     A*%%RS+  <record-write record-format="TOTAL" />
+     A*%%RS+ </sequence>
+     A*%%RS </record-sequences> 

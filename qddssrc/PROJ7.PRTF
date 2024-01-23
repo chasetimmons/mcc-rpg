@@ -1,0 +1,39 @@
+     A* CloudServices247 Customer Account Report
+     A* Chase Timmons 3/9/22
+     A          R HEADING                   SKIPB(1)
+     A                                     2DATE
+     A                                      EDTCDE(Y)
+     A                                    21'Fun With Modular Programming'
+     A                                    62'Page'
+     A                                    67PAGNBR
+     A                                      SPACEA(2)
+     A                                      EDTCDE(Z)
+     A          R DETAIL                    SPACEA(2)
+     A*                                    1'==================================-
+     A*                                     ===================================-
+     A*                                     ='
+     A*                                      SPACEA(1)
+     A                                     2'Customer:'
+     A            CUSTNO    R             13REFFLD(CUSTREC/CUSTNO RPGIV_5THS/CS-
+     A                                      CSTP)
+     A                                      TEXT('Customer Number')
+     A                                     2'User ID:'
+     A                                      SPACEB(1)
+     A            USERID        33        13TEXT('User ID')
+     A                                      SPACEA(1)
+     A                                     2'Password:'
+     A            PASSWORD       9        13TEXT('Password')
+     A                                     2'Last Four of Phone:'
+     A                                      SPACEB(1)
+     A            PFOUR          4        23TEXT('Last Four of Phone#')
+     A                                     2'Send Email Reminder:'
+     A                                      SPACEB(1)
+     A            REMINDER        L       23TEXT('Email Reminder')
+     A                                      DATFMT(*USA)
+     A*%%RS+<record-sequences>
+     A*%%RS+ <sequence name="PROJ7P">
+     A*%%RS+  <device type="printer" width="132" height="66" />
+     A*%%RS+  <record-write record-format="HEADING" />
+     A*%%RS+  <record-write record-format="DETAIL" />
+     A*%%RS+ </sequence>
+     A*%%RS </record-sequences> 

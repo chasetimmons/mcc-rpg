@@ -1,0 +1,28 @@
+     A                                      DSPSIZ(24 80 *DS3)
+     A                                      INDARA
+                                            CA03(03 'Exit')
+     A          R SCRN1
+     A                                  1 25'Fun with Modular Programming'
+     A                                  3 24'User ID and Password Generator'
+     A                                  6 17'User Six-Digit Number . . . '
+     A                                  9 17'User First Name . . . . . . '
+     A                                 11 17'User Last Name  . . . . . . '
+     A            USERNO         6  0I  6 46
+     A            USERFIRST     10   I  9 46
+     A            USERLAST      15   I 11 46
+     A                                 23  3'F3=Exit'
+     A                                  1  2DATE(*JOB)
+     A                                      EDTCDE(Y)
+     A                                  1 65TIME
+     A          R SCRN2
+     A                                      CA12(12 'Cancel')
+     A                                  1 25'Fun with Modular Programming'
+     A                                  3 24'User ID and Password Generator'
+     A                                 23  3'F3=Exit F12=Cancel'
+     A                                  6 17'User ID . . . . . . . . . . '
+     A                                  9 17'Password. . . . . . . . . . '
+     A            USERID        33   O  6 46
+     A            PASSWORD       9   O  9 46
+     A                                  1  2DATE(*JOB)
+     A                                      EDTCDE(Y)
+     A                                  1 65TIME 

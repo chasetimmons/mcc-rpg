@@ -1,0 +1,61 @@
+     A* REPORT TO PRINT WIBAUX U. COURSE OFFERINGS
+     A* REFERENCES WUSCTP AND WUCRSP
+     A          R HEADING
+     A                                      SKIPB(1)
+     A                                     2DATE
+     A                                      EDTCDE(Y)
+     A                                    15'Wibaux University Course Offerings'
+     A                                    55'PAGE'
+     A                                    60PAGNBR
+     A                                      EDTCDE(Z)
+     A                                     2'SECT'
+     A                                      SPACEB(2)
+     A                                     8'DEPT'
+     A                                    13'CRS'
+     A                                    18'TITLE'
+     A                                    44'CREDIT'
+     A                                    51'TIME'
+     A                                    56'DAY'
+     A                                    60'ROOM'
+     A                                     2'==================================-
+     A                                      ============================'
+     A                                      SPACEB(1)
+     A          R DETAIL                    SPACEB(1)
+     A            SECTION   R              2
+     A                                      REFFLD(SECREC/SECTION RPGIV_5THS/WU-
+     A                                      SCTP)
+     A            DEPT      R              8
+     A                                      REFFLD(SECREC/DEPT RPGIV_5THS/WUSCT-
+     A                                      P)
+     A            CRSNO     R             13REFFLD(SECREC/CRSNO RPGIV_5THS/WUSC-
+     A                                      TP)
+     A            CRSTTL    R             18REFFLD(CRSREC/CRSTTL RPGIV_5THS/WUC-
+     A                                      RSP)
+     A            CREDIT    R             46REFFLD(CRSREC/CREDIT RPGIV_5THS/WUC-
+     A                                      RSP)
+     A            SECTTIME       5A       50
+     A            SECDAY    R             56REFFLD(SECREC/SECDAY RPGIV_5THS/WUS-
+     A                                      CTP)
+     A            ROOM      R             60REFFLD(SECREC/ROOM RPGIV_5THS/WUSCT-
+     A                                      P)
+     A          R ERROR
+     A            SECTION   R              2
+     A                                      REFFLD(SECREC/SECTION RPGIV_5THS/WU-
+     A                                      SCTP)
+     A                                      SPACEB(1)
+     A            DEPT      R              8
+     A                                      REFFLD(SECREC/DEPT RPGIV_5THS/WUSCT-
+     A                                      P)
+     A            CRSNO     R             13
+     A                                      REFFLD(SECREC/CRSNO RPGIV_5THS/WUSC-
+     A                                      TP)
+     A                                    18'NOT found in Course File'
+
+     A*%%RS+<record-sequences>
+     A*%%RS+ <sequence name="WUCLLSP">
+     A*%%RS+  <device type="printer" width="132" height="66" />
+     A*%%RS+  <record-write record-format="HEADING" />
+     A*%%RS+  <record-write record-format="DETAIL" />
+     A*%%RS+  <record-write record-format="ERROR" />
+     A*%%RS+ </sequence>
+     A*%%RS </record-sequences> 

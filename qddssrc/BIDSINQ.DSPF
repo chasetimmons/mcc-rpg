@@ -1,0 +1,84 @@
+     A* CIS170 Project 10 (2) - Displays job bid detail
+     A* 11/16/21 Chase Timmons
+     A                                      INDARA
+     A                                      PRINT
+     A                                      CA03(03 'F3=Exit')
+     A                                      CA12(12 'F12=Cancel')
+     A          R SCRN1
+     A                                  1  2'User:'
+     A                                  1  8USER
+     A                                  1 72DATE(*JOB)
+     A                                      EDTWRD('  /  /  ')
+     A                                  1 29'P A I N T  B R O S,  I N C.'
+     A                                      COLOR(WHT)
+     A                                  2 35'Job Bid Inquiry'
+     A                                      COLOR(WHT)
+     A                                  7 31'Job Number. . . . :'
+     A                                      COLOR(WHT)
+     A            JOBNO          4Y 0B  7 51
+     A  90                                  ERRMSG('Invalid job number' 90)
+     A  90                                  DSPATR(PC)
+     A                                  9 29'Type value, then press enter'
+     A                                  8 24'==================================-
+     A                                      ==='
+     A                                      COLOR(RED)
+     A                                 20  4'F3=Exit'
+     A                                  6 24'oOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoO-
+     A                                      oOo'
+     A                                      COLOR(RED)
+     A          R SCRN2
+     A                                  1  2'User:'
+     A                                  1  8USER
+     A                                  1 72DATE(*JOB)
+     A                                      EDTWRD('  /  /  ')
+     A                                  1 29'P A I N T  B R O S,  I N C.'
+     A                                      COLOR(WHT)
+     A                                  2 35'Job Bid Inquiry'
+     A                                      COLOR(WHT)
+     A                                  4  2'Displaying detail for job number:'
+     A            JOBNO          4Y 0O  4 36COLOR(BLU)
+     A                                  6  2'PAINT'
+     A                                      COLOR(WHT)
+     A                                  7  2'Paint Code . . . . . .'
+     A                                  8  2'Cost per Gallon  . . .'
+     A                                  9  2'Coverage per Gallon  .'
+     A                                 11  2'DIMENSIONS'
+     A                                      COLOR(WHT)
+     A            PCODE     R        O  7 25REFFLD(BIDREC/PCODE RPGIV_5THS/BIDS)
+     A            PCOST     R        O  8 25REFFLD(BIDREC/PCOST RPGIV_5THS/BIDS)
+     A                                      EDTCDE(1 $)
+     A            COVRG     R        O  9 25REFFLD(BIDREC/COVRG RPGIV_5THS/BIDS)
+     A                                 12  2'Length . . .'
+     A            LENFT     R        O 12 15REFFLD(BIDREC/LENFT RPGIV_5THS/BIDS)
+     A                                      EDTCDE(1)
+     A                                 12 19'ft'
+     A            LENIN     R        O 12 22REFFLD(BIDREC/LENIN RPGIV_5THS/BIDS)
+     A                                      EDTCDE(1)
+     A                                 12 26'in'
+     A                                 13  2'Width  . . .'
+     A                                 14  2'Height . . .'
+     A            WIDFT     R        O 13 15REFFLD(BIDREC/WIDFT RPGIV_5THS/BIDS)
+     A                                      EDTCDE(1)
+     A            WIDIN     R        O 13 22REFFLD(BIDREC/WIDIN RPGIV_5THS/BIDS)
+     A                                      EDTCDE(1)
+     A            HTFT      R        O 14 15REFFLD(BIDREC/HTFT RPGIV_5THS/BIDS)
+     A                                      EDTCDE(1)
+     A            HTIN      R        O 14 22REFFLD(BIDREC/HTIN RPGIV_5THS/BIDS)
+     A                                      EDTCDE(1)
+     A                                 13 19'ft'
+     A                                 14 19'ft'
+     A                                 13 26'in'
+     A                                 14 26'in'
+     A                                 16  2'Percent windows and doors:'
+     A            PCT       R        O 16 29REFFLD(BIDREC/PCT RPGIV_5THS/BIDS)
+     A                                      EDTWRD('  %')
+     A                                 20  4'F3=Exit'
+     A                                 20 14'F12=Cancel'
+
+     A*%%RS+<record-sequences>
+     A*%%RS+ <sequence name="BIDSINQS">
+     A*%%RS+  <device type="display" width="80" height="24" />
+     A*%%RS+  <record-write record-format="SCRN1" />
+     A*%%RS+  <record-write record-format="SCRN2" />
+     A*%%RS+ </sequence>
+     A*%%RS </record-sequences> 

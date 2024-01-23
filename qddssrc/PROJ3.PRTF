@@ -1,0 +1,33 @@
+     A* CIS270 - Chase Timmons 1/24/2022
+     A* Grade summary report
+     A          R HEADING                   SKIPB(1)
+     A                                     2DATE
+     A                                      EDTCDE(Y)
+     A                                    15'Student Score Summary - Chase Timm-
+     A                                      ons'
+     A                                   123'Page'
+     A                                   128PAGNBR
+     A                                      EDTCDE(Z)
+     A                                     2'Student #'
+     A                                      SPACEB(3)
+     A                                    15'Student Name'
+     A                                    40'Average Score'
+     A                                    58'Letter Grade'
+     A                                     2'==================================-
+     A                                      =================================='
+     A                                      SPACEB(1)
+     A          R DETAIL
+     A            STUNO     R              2REFFLD(EXAMREC/STUNO RPGIV_5THS/GRA-
+     A                                      DEBOOK)
+     A                                      SPACEB(1)
+     A            FULLNAME      20        15
+     A            AVERAGE        6  2     42EDTCDE(1)
+     A            LETTERGRAD     2        63
+
+     A*%%RS+<record-sequences>
+     A*%%RS+ <sequence name="PROJ3R">
+     A*%%RS+  <device type="printer" width="132" height="66" />
+     A*%%RS+  <record-write record-format="HEADING" />
+     A*%%RS+  <record-write record-format="DETAIL" />
+     A*%%RS+ </sequence>
+     A*%%RS </record-sequences> 

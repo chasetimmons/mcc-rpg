@@ -1,0 +1,55 @@
+     A* RETIREMENT REPORT - REFERENCES INSTRUCTLF LOGICAL FILE
+     A                                      REF(INSTRUCTLF)
+     A          R HEADINGS
+                                            SKIPB(2)
+     A                                     4DATE(*JOB *YY)
+     A                                      EDTCDE(Y)
+     A                                    53'Wibaux University'
+     A                                   104'Page:'
+     A                                   110PAGNBR
+     A                                      EDTCDE(1)
+     A                                    46'Instructor Retirement Report'
+     A                                      SPACEB(2)
+     A                                     3'Instructor'
+     A                                    89'Date'
+     A                                   102'Eligible'
+     A                                   117'Years Before'
+     A                                      SPACEA(1)
+     A                                     5'Number'
+     A                                    17'Instructor'
+     A                                    28'Name'
+     A                                    50'Dept.'
+     A                                    57'Rank'
+     A                                    64'Current Wage'
+     A                                    78'Tenure'
+     A                                    89'Hired'
+     A                                   104'Date'
+     A                                   118'Retirement'
+     A                                      SPACEA(1)
+     A          R DETAIL
+     A            INSTNO    R              3
+     A*concatenated and trimmed instructor first name, space, last name
+     A*use this field name in your RPG program
+     A            COMBINED      30        16
+     A            DEPT      R             50
+     A            RANK      R    1        58
+     A            SALARY    R             65EDTCDE(J $)
+     A            TENURE    R             81
+     A*the two date fields from your RPG program - note data type L
+     A*reference these fields by these names in your RPG program
+     A            HIREDATE        L       87DATFMT(*USA)
+     A            RDATE           L      101DATFMT(*USA)
+     A*the calculated number of years before retirement
+     A*reference this field by this name in your RPG program
+     A*EDTCDE N is used to show a negative sign if retirement date has already
+     A*occurred
+     A            RYEARS         2  0    121EDTCDE(N)
+     A                                      SPACEA(1)
+     A          R FOOTER
+     A*Note field names that should be matched in your RPG program
+     A                                     2'Average Wage:'
+     A            AVGWAGE        9  2     21EDTCDE(J)
+     A                                     2'Total Instructors:'
+     A                                      SPACEB(1)
+     A            COUNT          4  0     25EDTCDE(1)
+ 

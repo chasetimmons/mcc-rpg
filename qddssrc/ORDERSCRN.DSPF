@@ -1,0 +1,88 @@
+     A* CIS270 - Project 11 - Order Status Inquiry Screen
+     A* 04/13/22 Chase Timmons
+     A                                      REF(MYORDPRP)
+     A                                      INDARA
+     A                                      CA03(03 'F3=Exit')
+     A                                      CA12(12 'F12=Cancel')
+     A                                      VLDCMDKEY(25)
+     A* Record format for inquiry screen
+     A          R ORDERINQ
+     A                                  1 34'CompuSell, Inc.'
+     A                                      COLOR(WHT)
+     A                                  1  3USER
+     A                                  1 72DATE
+     A                                      EDTCDE(Y)
+     A                                  7 19'Enter Product Status . . :'
+     A                                  8 46'SH = Shipped'
+     A                                      COLOR(YLW)
+     A                                  9 46'BO = Back Ordered'
+     A                                      COLOR(YLW)
+     A                                 20  3'F3=Exit'
+     A                                  3 29'O R D E R   I N Q U I R Y'
+     A                                      COLOR(BLU)
+     A                                  6 18'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-
+     A                                      ~~~~~~~~~~~~~~'
+     A                                      COLOR(WHT)
+     A                                 10 18'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-
+     A                                      ~~~~~~~~~~~~~~'
+     A                                      COLOR(WHT)
+     A            STATUS         2   B  7 46TEXT('Order Status')
+     A*                                     VALUES('SH' 'BO')
+     A  53                                  ERRMSG('Not a valid status' 20)
+     A                                 11 30'Type value, press enter'
+     A                                      COLOR(BLU)
+     A* Record format for subfile
+     A          R ORDERSFL                  SFL
+     A            ORD#      R        O  7  6TEXT('Order Number')
+     A                                      COLOR(WHT)
+     A            PRODNO    R        O  7 16TEXT('Product Numner')
+     A                                      COLOR(WHT)
+     A            SQTYORD        4  0B  7 30TEXT('Qty Ordered')
+     A                                      EDTCDE(1)
+     A                                      CHECK(RB)
+     A            SQTYHLD        4  0B  7 44TEXT('Qty On Hold')
+     A                                      EDTCDE(1)
+     A                                      CHECK(RB)
+     A            STRACK         7   B  7 57TEXT('Tracking Number')
+     A            SSTS           2   B  7 71TEXT('Order Status')
+     A                                      VALUES('SH' 'BO' 'OH')
+     A* Record format for subfile control
+     A          R ORDERCTL                  SFLCTL(ORDERSFL)
+     A  50                                  SFLDSPCTL
+     A  50                                  SFLDSP
+     A  51                                  SFLCLR
+     A* NEED TO ADD LOGIC FOR 'MORE...'
+     A  52                                  SFLEND(*MORE)
+     A                                      SFLPAG(10)
+     A                                      SFLSIZ(20)
+     A                                      OVERLAY
+     A                                  5  6'Order #'
+     A                                  5 16'Product #'
+     A                                  5 28'Qty Ordered'
+     A                                  5 42'Qty On Hold'
+     A                                  5 56'Tracking #'
+     A                                  5 69'Status'
+     A                                  1 34'CompuSell, Inc.'
+     A                                      COLOR(WHT)
+     A                                  1  3USER
+     A                                  1 72DATE
+     A                                      EDTCDE(Y)
+     A                                  3 29'O R D E R   I N Q U I R Y'
+     A                                      COLOR(BLU)
+     A                                  6  4'-----------------------------------
+     A                                      ------------------------------------
+     A                                      --'
+     A          R FOOTER
+     A                                 20  3'F3=Exit   F12=Cancel'
+     A                                 18  3'Change desired values and press en-
+     A                                      ter to continue'
+     A*%%RS+<record-sequences>
+     A*%%RS+ <sequence name="ORDERD">
+     A*%%RS+  <device type="display" width="80" height="24" />
+     A*%%RS+  <record-write record-format="ORDERINQ" />
+     A*%%RS+  <record-write record-format="ORDERSFL" />
+     A*%%RS+  <record-write record-format="ORDERCTL" />
+     A*%%RS+  <record-write record-format="FOOTER" />
+     A*%%RS+ </sequence>
+     A*%%RS </record-sequences>
+     A*%%RS </record-sequences> 

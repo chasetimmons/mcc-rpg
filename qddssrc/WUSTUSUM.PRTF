@@ -1,0 +1,65 @@
+     A          R HEADING
+     A                                     1DATE(*YY)
+     A                                      EDTCDE(Y)
+     A                                    33'Wibaux University'
+     A                                    72'Page'
+     A                                    77PAGNBR
+     A                                      EDTCDE(Z)
+     A                                    25'Student Population Summary Report'
+     A                                      SPACEB(1)
+     A                                    33'Student Residency'
+     A                                      SPACEB(1)
+     A                                     6'Classification'
+     A                                      SPACEB(1)
+     A                                    23'In-District'
+     A                                    37'Out-Of-District'
+     A                                    54'International'
+     A                                    70'Total'
+     A                                     6'--------------'
+     A                                      SPACEB(1)
+     A                                    23'-----------'
+     A                                    37'---------------'
+     A                                    54'-------------'
+     A                                    70'-----'
+     A          R FRSHDETAIL                SPACEB(1)
+     A                                     8'Freshman'
+     A            FRSHICNT       4  0     26EDTCDE(1)
+     A            FRSHOCNT       4  0     42EDTCDE(1)
+     A            FRSHFCNT       4  0     59EDTCDE(1)
+     A            FRSHTOT        5  0     70EDTCDE(1)
+     A                                      SPACEA(1)
+     A          R SOPHDETAIL                SPACEB(1)
+     A                                     8'Sophmores'
+     A            SOPHICNT       4  0     26EDTCDE(1)
+     A            SOPHOCNT       4  0     42EDTCDE(1)
+     A            SOPHFCNT       4  0     59EDTCDE(1)
+     A            SOPHTOT        5  0     70EDTCDE(1)
+     A                                      SPACEA(1)
+     A          R JUNRDETAIL                SPACEB(1)
+     A                                     8'Juniors'
+     A            JUNRICNT       4  0     26EDTCDE(1)
+     A            JUNROCNT       4  0     42EDTCDE(1)
+     A            JUNRFCNT       4  0     59EDTCDE(1)
+     A            JUNRTOT        5  0     70EDTCDE(1)
+     A                                      SPACEA(1)
+     A          R SENRDETAIL                SPACEB(1)
+     A                                     8'Seniors'
+     A            SENRICNT       4  0     26EDTCDE(1)
+     A            SENROCNT       4  0     42EDTCDE(1)
+     A            SENRFCNT       4  0     59EDTCDE(1)
+     A            SENRTOT        5  0     70EDTCDE(1)
+     A                                      SPACEA(1)
+     A          R TOTAL                     SPACEB(1)
+     A                                     8'Total'
+     A            INDISTTOT      5  0     25EDTCDE(1)
+     A            OUTDISTTOT     5  0     41EDTCDE(1)
+     A            INTTOT         5  0     58EDTCDE(1)
+     A            GRANDTOTAL     6  0     69EDTCDE(1)
+     A                                      SPACEA(1)
+     A*%%RS+<record-sequences>
+     A*%%RS+ <sequence name="WUSTUSUMR">
+     A*%%RS+  <device type="printer" width="132" height="66" />
+     A*%%RS+  <record-write record-format="HEADING" />
+     A*%%RS+  <record-write record-format="TOTAL" />
+     A*%%RS+ </sequence>
+     A*%%RS </record-sequences> 

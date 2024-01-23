@@ -1,0 +1,36 @@
+     A          R HEADING                   SKIPB(1)
+     A                                     2DATE
+     A                                      EDTCDE(Y)
+     A                                    21'Fun With Characters'
+     A                                    62'Page'
+     A                                    67PAGNBR
+     A                                      SPACEA(2)
+     A                                      EDTCDE(Z)
+     A          R DETAIL                    SPACEA(1)
+     A                                     1'==================================-
+     A                                      ===================================-
+     A                                      ='
+     A                                      SPACEA(1)
+     A                                     2'Customer:'
+     A            CUSTNO         6  0     13SPACEA(2)
+     A                                     2'User ID:'
+     A            USERID        33        13SPACEA(1)
+     A                                     2'Password:'
+     A            PASSWORD       9        13SPACEA(2)
+     A                                     2'Name:'
+     A            NAME          26        13SPACEA(1)
+     A                                     2'Zip:'
+     A            ZIP           10        13SPACEA(1)
+     A                                     2'Phone:'
+     A            PHONE         14        12SPACEA(1)
+     A                                     2'Year:'
+     A            YEAROUT        4        13SPACEA(2)
+     A                                     2'Balance:'
+     A            BALANCE        8        13
+     A*%%RS+<record-sequences>
+     A*%%RS+ <sequence name="CSCRPRTP">
+     A*%%RS+  <device type="printer" width="132" height="66" />
+     A*%%RS+  <record-write record-format="HEADING" />
+     A*%%RS+  <record-write record-format="DETAIL" />
+     A*%%RS+ </sequence>
+     A*%%RS </record-sequences> 

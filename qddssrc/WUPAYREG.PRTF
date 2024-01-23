@@ -1,0 +1,62 @@
+     A          R HEADING
+     A                                      SKIPB(1)
+     A                                     2DATE
+     A                                      EDTCDE(Y)
+     A                                   113'Page'
+     A                                   120PAGNBR
+     A                                      EDTCDE(Z)
+     A                                    43'Wibaux University Payroll Register'
+     A                                      SPACEB(1)
+     A                                     3'Social'
+     A                                      SPACEB(2)
+     A                                    21'Employee'
+     A                                    44'Gross'
+     A                                    60'Federal'
+     A                                    75'State'
+     A                                    89'FICA'
+     A                                   105'Net'
+     A                                    15'Initial'
+     A                                      SPACEB(1)
+     A                                    24'Last Name'
+     A                                    44'Pay'
+     A                                    62'Tax'
+     A                                    76'Tax'
+     A                                   105'Pay'
+     A                                      SPACEA(1)
+     A          R DETAIL
+     A                                      SPACEA(1)
+     A            EMPNO     R              2SPACEB(1)
+     A                                      REFFLD(EMPREC/EMPNO RPGIV_5THS/WUHR-
+     A                                      LYP)
+     A                                      EDTWRD('   -  -    ')
+     A            FINIT          1        18
+     A            LNAME     R             24REFFLD(EMPREC/LNAME RPGIV_5THS/WUHR-
+     A                                      LYP)
+     A            GROSSPAY       6  2     44EDTCDE(1)
+     A            FEDAMT         6  2     59EDTCDE(1)
+     A            STATEAMT       5  2     75EDTCDE(1)
+     A            FICAAMT        5  2     89EDTCDE(1)
+     A            NETPAY         6  2    102EDTCDE(1)
+     A          R TOTAL
+     A                                      SPACEA(1)
+     A                                    17'-----------------------------------
+     A                                      ------------------------------------
+     A                                      ----------------------------       -
+     A                                                                         -
+     A                                                              '
+     A                                    24'Grand Totals'
+     A                                      SPACEB(1)
+     A            TOTALGROSS     8  2     41EDTCDE(1 $)
+     A            TOTALFED       8  2     56EDTCDE(1 $)
+     A            TOTALSTATE     7  2     71EDTCDE(1 $)
+     A            TOTALFICA      7  2     85EDTCDE(1 $)
+     A            TOTALNET       8  2     99EDTCDE(1 $)
+
+     A*%%RS+<record-sequences>
+     A*%%RS+ <sequence name="WUPAYREGR">
+     A*%%RS+  <device type="printer" width="132" height="66" />
+     A*%%RS+  <record-write record-format="HEADING" />
+     A*%%RS+  <record-write record-format="DETAIL" />
+     A*%%RS+  <record-write record-format="TOTAL" />
+     A*%%RS+ </sequence>
+     A*%%RS </record-sequences> 

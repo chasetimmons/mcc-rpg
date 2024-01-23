@@ -1,0 +1,28 @@
+     A          R HEADINGS
+     A                                      SPACEA(1)
+     A                                     2DATE
+     A                                    30'Payroll Report'
+     A                                    67PAGNBR
+     A                                     2'SSN'
+     A                                      SPACEB(2)
+     A                                    18'Name'
+     A                                    40'Hours Worked'
+     A                                    59'Pay'
+     A          R DETAIL                    SPACEA(1)
+     A            SOCSEC    R              2REFFLD(ACMEREC/SOCSEC RPGIV_5THS/AC-
+     A                                      P001)
+     A                                      EDTWRD('   -  -    ')
+     A            NAME      R             18REFFLD(ACMEREC/NAME RPGIV_5THS/ACP0-
+     A                                      01)
+     A            WKHOURS   R             40
+     A                                      REFFLD(ACMEREC/WKHOURS RPGIV_5THS/A-
+     A                                      CP001)
+     A            PAY            6  2     59EDTCDE(1)
+
+     A*%%RS+<record-sequences>
+     A*%%RS+ <sequence name="PROJECT3C">
+     A*%%RS+  <device type="printer" width="71" height="66" />
+     A*%%RS+  <record-write record-format="HEADINGS" />
+     A*%%RS+  <record-write record-format="DETAIL" />
+     A*%%RS+ </sequence>
+     A*%%RS </record-sequences> 

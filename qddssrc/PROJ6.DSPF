@@ -1,0 +1,100 @@
+     A* CIS270 Project 6 - Instructor File Maintenance Screens
+     A* 02/17/22 Chase Timmons
+     A                                      REF(MYINSTP)
+     A                                      INDARA
+     A                                      PRINT
+     A                                      CA03(03 'F3=Exit')
+     A                                      CA10(10 'F10=Delete')
+     A                                      CA12(12 'F12=Cancel')
+     A                                      VLDCMDKEY(25)
+     A          R GETINST
+     A                                  1 32'Wibaux Universtiy'
+     A                                      COLOR(WHT)
+     A                                  2 27'Instructor File Maintenance'
+     A                                      COLOR(BLU)
+     A                                  3 35USER
+     A                                  1 71DATE
+     A                                      EDTCDE(Y)
+     A                                  6 19'Social Security Number  . . '
+     A                                  7 19'Action Code . . . . . . . . '
+     A                                  8 22'A = add record'
+     A                                      COLOR(WHT)
+     A                                  9 22'C = change record'
+     A                                      COLOR(YLW)
+     A                                 10 22'D = delete record'
+     A                                      COLOR(RED)
+     A                                 12 19'Type values, then press Enter'
+     A                                 20  4'F3=Exit'
+     A            INSTNO    R        B  6 48TEXT('Soc. Sec. #')
+     A  30                                  ERRMSG('Customer already exists' 30)
+     A  31                                  ERRMSG('Customer not found' 31)
+     A  32                                  ERRMSG('Customer not found' 32)
+     A            MODE           1   I  7 48TEXT('Mode')
+     A  33                                  ERRMSG('Invalid action code' 33)
+     A  33                                  DSPATR(PC)
+     A          R SETINST
+     A                                  1 32'Wibaux Universtiy'
+     A                                      COLOR(WHT)
+     A                                  2 27'Instructor File Maintenance'
+     A                                      COLOR(BLU)
+     A                                  3 35USER
+     A                                  1 71DATE
+     A                                      EDTCDE(Y)
+     A                                  5 19'Social Security Number  . . '
+     A                                  6 19'First Name  . . . . . . . . '
+     A                                  7 19'Last Name . . . . . . . . . '
+     A                                  8 19'Department  . . . . . . . .'
+     A                                  9 19'Salary  . . . . . . . . . . '
+     A                                 10 19'Rank  . . . . . . . . . . . '
+     A                                 11 19'Sex . . . . . . . . . . . . '
+     A                                 12 19'Date of Hire  . . . . . . . '
+     A                                 13 19'Marital Status  . . . . . . '
+     A                                 14 19'Number of Dependents. . . . '
+     A                                 15 19'Tenured (Y/N) . . . . . . . '
+     A                                 16 19'Preferred Title . . . . . . '
+     A  40                             18 27'Type values, press Enter'
+     A  40                                  COLOR(WHT)
+     A  41                             18 27'Type changes, press Enter'
+     A  41                                  COLOR(YLW)
+     A  42                             18 27'Press F10 to delete record'
+     A  42                                  COLOR(RED)
+     A*           MODETXT        6   O 18 49COLOR(RED)
+     A            INSTNO    R        O  5 48TEXT('Soc. Sec. #')
+     A            IFNAME    R        B  6 48TEXT('First Name')
+     A  42                                  DSPATR(PR)
+     A            ILNAME    R        B  7 48TEXT('Last Name')
+     A  42                                  DSPATR(PR)
+     A            DEPT      R        B  8 48TEXT('Department')
+     A  42                                  DSPATR(PR)
+     A            SALARY    R        B  9 48TEXT('Salary')
+     A                                      EDTCDE(1 $)
+     A  42                                  DSPATR(PR)
+     A            RANK      R        B 10 48TEXT('Rank')
+     A                                      RANGE('1' '4')
+     A  42                                  DSPATR(PR)
+     A            SEX       R        B 11 48TEXT('Gender')
+     A                                      VALUES('M' 'F')
+     A  42                                  DSPATR(PR)
+     A            DATEIN          L  B 12 48DATFMT(*USA)
+     A  42                                  DSPATR(PR)
+     A            MARSTS    R        B 13 48TEXT('Marital Status')
+     A                                      VALUES('M' 'S')
+     A  42                                  DSPATR(PR)
+     A            DEPEND    R        B 14 48TEXT('# of Dependents')
+     A  42                                  DSPATR(PR)
+     A            TENURE    R        B 15 48TEXT('Tenured?')
+     A                                      VALUES('Y' 'N')
+     A  42                                  DSPATR(PR)
+     A            TITLE     R        B 16 48TEXT('Preferred Title')
+     A                                      RANGE('1' '4')
+     A  42                                  DSPATR(PR)
+     A N42                             20  2'F3=Exit   F12=Cancel'
+     A  42                             20  2'F3=Exit   F10=Delete   F12=Cancel'
+
+     A*%%RS+<record-sequences>
+     A*%%RS+ <sequence name="INSTS">
+     A*%%RS+  <device type="display" width="80" height="24" />
+     A*%%RS+  <record-write record-format="GETINST" />
+     A*%%RS+  <record-write record-format="SETINST" />
+     A*%%RS+ </sequence>
+     A*%%RS </record-sequences> 

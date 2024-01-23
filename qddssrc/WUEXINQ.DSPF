@@ -1,0 +1,78 @@
+     A* CIS170 Project 10 - Displays Wibaux U. student exam scores
+     A* 11/16/21 Chase Timmons
+     A                                      INDARA
+     A                                      PRINT
+     A                                      CA03(03 'F3=Exit')
+     A                                      CA12(12 'F12=Cancel')
+     A          R SCRN1
+     A                                  1  8USER
+     A                                  1 72DATE(*JOB)
+     A                                      EDTWRD('  /  /  ')
+     A                                  1 34'Wibaux University'
+     A                                      COLOR(WHT)
+     A                                  2 29'Student Exam Score Inquiry'
+     A                                      COLOR(WHT)
+     A                                  1  2'User:'
+     A                                  8 25'Student Number. . . . :'
+     A            STUNO          9Y 0B  8 49
+     A  90                                  ERRMSG('Invalid student number' 90)
+     A  90                                  DSPATR(PC)
+     A                                      COLOR(BLU)
+     A                                 10 28'Type value, then press enter'
+     A                                  9 23'==================================-
+     A                                      ==='
+     A                                 20  3'F3=Exit'
+     A          R SCRN2
+     A                                  1  2'User:'
+     A                                  1  8USER
+     A                                  1 34'Wibaux University'
+     A                                      COLOR(WHT)
+     A                                  2 29'Student Exam Score Inquiry'
+     A                                      COLOR(WHT)
+     A                                  1 72DATE(*JOB)
+     A                                      EDTWRD('  /  /  ')
+     A                                  5 19'Displaying exam scores for student-
+     A                                      :'
+     A                                  7 30'Last Name. . .'
+     A            SLNAME    R        O  7 45REFFLD(EXAMREC/SLNAME RPGIV_5THS/WU-
+     A                                      EXAMP)
+     A                                  8 30'First Name . .'
+     A            SFNAME    R        O  8 45REFFLD(EXAMREC/SFNAME RPGIV_5THS/WU-
+     A                                      EXAMP)
+     A                                 10 30'Scores:'
+     A                                      COLOR(WHT)
+     A                                 11 32'EXAM 1 . . .'
+     A            EXAM1     R        O 11 45REFFLD(EXAMREC/EXAM1 RPGIV_5THS/WUE-
+     A                                      XAMP)
+     A                                      EDTCDE(1)
+     A                                 12 32'EXAM 2 . . .'
+     A            EXAM2     R        O 12 45REFFLD(EXAMREC/EXAM2 RPGIV_5THS/WUE-
+     A                                      XAMP)
+     A                                      EDTCDE(1)
+     A                                 13 32'EXAM 3 . . .'
+     A            EXAM3     R        O 13 45REFFLD(EXAMREC/EXAM3 RPGIV_5THS/WUE-
+     A                                      XAMP)
+     A                                      EDTCDE(1)
+     A                                 14 32'EXAM 4 . . .'
+     A            EXAM4     R        O 14 45REFFLD(EXAMREC/EXAM4 RPGIV_5THS/WUE-
+     A                                      XAMP)
+     A                                      EDTCDE(1)
+     A                                 15 32'EXAM 5 . . .'
+     A            EXAM5     R        O 15 45REFFLD(EXAMREC/EXAM5 RPGIV_5THS/WUE-
+     A                                      XAMP)
+     A                                      EDTCDE(1)
+     A                                 20  3'F3=Exit'
+     A                                 20 13'F12=Cancel'
+     A            STUNO          9Y 0O  5 55
+     A            AVERAGE        3Y 0O 17 45EDTCDE(1)
+     A                                 17 31'AVERAGE . . .'
+     A            LETTER         1   O 18 47
+     A                                 18 31'LETTER. . . .'
+
+     A*%%RS+<record-sequences>
+     A*%%RS+ <sequence name="WUEXINQS">
+     A*%%RS+  <device type="display" width="80" height="24" />
+     A*%%RS+  <record-write record-format="SCRN1" />
+     A*%%RS+  <record-write record-format="SCRN2" />
+     A*%%RS+ </sequence>
+     A*%%RS </record-sequences> 

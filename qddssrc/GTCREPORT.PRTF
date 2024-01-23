@@ -1,0 +1,25 @@
+     A* EXTERNAL PRINTER FILE DEFINITION FOR GTC CUSTOMER REPORT
+     A                                      REF(GTCSTP)
+     A          R HEADING                   SKIPB(1)
+     A                                     3DATE(*SYS *YY)
+     A                                      EDTCDE(Y)
+     A                                    50'GTC CUSTOMER ACCOUNTS'
+     A                                   120'PAGE '
+     A                                   126PAGNBR
+     A                                      EDTCDE(Z)
+     A                                      SPACEA(3)
+     A                                     2'PHONE'
+     A                                    28'LAST NAME'
+     A                                    50'CURRENT BILL'
+     A                                    65'AMOUNT OWED'
+     A                                      SPACEA(1)
+     A                                     2'--------------'
+     A                                    28'---------------'
+     A                                    50'------------'
+     A                                    65'-----------'
+     A                                      SPACEA(1)
+     A          R DETAIL                    SPACEA(1)
+     A            CPHONE    R              3EDTWRD('0(   )   -    ')
+     A            CLNAME    R             28
+     A            CURBIL    R             50EDTCDE(J)
+     A            AMTOWE    R             65EDTCDE(J $) 
